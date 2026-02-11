@@ -1,238 +1,182 @@
-# CCU Thesis LaTeX Template
-This template is designed for writing master's and doctoral theses at National Chung Cheng University, providing a predefined structure and basic syntax examples for users to refer to. 
-Users only need to make adjustments according to their own needs.  
-The template has been pre-set with Times New Roman and DFKai-SB as two commonly used fonts.
+# National Chung Cheng University (CCU) Thesis LaTeX Template
+
+[![License](https://img.shields.io/github/license/anlit75/ccu-thesis-latex-template)](LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/anlit75/ccu-thesis-latex-template)](https://github.com/anlit75/ccu-thesis-latex-template/releases)
+[![Build Status](https://github.com/anlit75/ccu-thesis-latex-template/actions/workflows/build.yml/badge.svg)](https://github.com/anlit75/ccu-thesis-latex-template/actions)
+<!-- [![Open in Overleaf](https://img.shields.io/badge/Overleaf-Open%20in%20Overleaf-47ba40?style=flat&logo=overleaf)](https://www.overleaf.com/docs?snip_uri=https://github.com/anlit75/ccu-thesis-latex-template/archive/refs/heads/main.zip) -->
+
+An out-of-the-box CCU Thesis LaTeX Template integrated with Docker and GitHub Codespaces, offering a zero-config writing environment with strict formatting compliance and automated PDF backups.
 
 ## Table of Contents
-- [Getting Started](#getting-started)
-- [Template Demonstration](#template-demonstration)
-- [Template Structure](#template-structure)
-- [LaTeX Environment Setup](#latex-environment-setup)
-    - [Docker Environment Setup](#docker-environment-setup)
-    - [Local Environment Setup](#local-environment-setup)
-- [User Guide](#user-guide)
-- [Acknowledgement](#acknowledgement)
-- [Collaborators](#collaborators)
-- [Disclaimer](#disclaimer)
-- [License](#license)
+- [💻 Online Demo](#-online-demo)
+- [⚡ Get The Template](#-get-the-template)
+- [🚀 Quick Start](#-quick-start)
+- [🐳 Local DevContainer](#-local-devcontainer)
+- [☁️ Auto Build & Backup](#️-auto-build--backup)
+- [📂 Template Structure](#-template-structure)
+- [📖 User Guide](#-user-guide)
+- [🎨 Template Demonstration](#-template-demonstration)
+- [🤝 Acknowledgement](#-acknowledgement)
+- [⚠️ Disclaimer](#️-disclaimer)
+- [📄 License](#-license)
 
-## Getting Started
-You have several options to obtain this template. Please choose according to your preference :
-1. Download the zip file of this template.
-2. Use the git clone command : `git clone https://github.com/anlit75/CCU-Thesis-LaTeX-Template.git`
-3. Use the fork feature to copy this template to your own GitHub repository.
-4. Download the latest release version : https://github.com/anlit75/CCU-Thesis-LaTeX-Template/releases
-5. Click the **Use this template** button at the top right of this page to create a new repository ( recommended method ).
+## 💻 Online Demo
+If you just want to see how the environment looks or test the compilation results, you can quickly launch it by clicking the button below:\
+\
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anlit75/ccu-thesis-latex-template)
 
-If you had not use Git or GitHub before, here are some quick tutorials :
-- Basics of git : [Learn the Basics of Git in Under 10 Minutes](https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/)
-- GitHub Fork : [Fork a repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
+> [!CAUTION]\
+> *This mode cannot directly save progress, please do not use it for formal writing.*
 
-## Template Demonstration
-Below are prefilled thesis using the template for your reference : 
-- [demo/master_chinese_template.pdf](./demo/master_chinese_template.pdf) is a demo file of **Master Traditional Chinese** thesis
-- [demo/doctor_chinese_template.pdf](./demo/doctor_chinese_template.pdf) is a demo file of **Ph.D. Traditional Chinese** dissertations
+## ⚡ Get The Template
 
-## Template Structure
+Click the green **`[Use this template]`** button above and select **Private** to create your thesis repository.
 
-```
-Template Structure
-├── main.tex                            // 主文件
-├── main.pdf                            // 主文件編譯後的PDF檔
-├── frontpages
-│   ├── abstract.tex                    // 中/英文摘要
-│   ├── acknowledgement.tex             // 致謝
-│   ├── denotation.tex                  // 符號列表
-│   └── verification.pdf                // 論文審定書PDF檔
-├── sections
-│   ├── introduction.tex                // 緒論
-│   ├── related_work.tex                // 文獻探討
-│   ├── method.tex                      // 研究方法
-│   ├── experiments.tex                 // 研究結果
-│   └── conclusion.tex                  // 結論
-├── backpages
-│   ├── appendix.tex                    // 附錄
-│   └── reference.bib                   // 參考文獻資料庫
-├── figures
-│   ├── watermark.jpg                   // 浮水印
-│   └── ...
-├── fonts
-│   ├── chinese
-│   │   ├── BiauKai.ttf                 // 標楷體
-│   │   └── ...
-│   └── english
-│       ├── Times New Roman-*.ttf       // Times New Roman
-│       └── ...
-├── demo
-│   ├── master_chinese_template.pdf     // 碩士繁體中文論文範例檔案
-│   ├── doctor_chinese_template.pdf     // 博士繁體中文論文範例檔案
-│   └── ...
-├── ccusetup.tex                        // 模板設定
-└── ccuthesis.cls                       // 模板文件
-```
+> [!WARNING]\
+> It is recommended not to directly Fork this repository!\
+> Theses should remain confidential, and Forked repositories are public by default (unless you intend to contribute code).
 
-Please write in the corresponding .tex file based on the content. If you wish to add or remove sections, you can adjust by adding/removing `.tex` files in the "sections" folder.  
-Then, in the `main.tex`, use the `\input{./path/to/texfile}` syntax to add new section or delete relevant section accordingly.
+## 🚀 Quick Start
 
-## LaTeX Environment Setup
-> Before setting up the LaTeX environment, please make sure that you have downloaded this template to your local computer!
+**Suitable for:** Users who do not want to install any software, have limited computer performance, or simply want a quick preview.
 
-There are two ways to set up the environment for users to choose from.
-You only need to **install one of them**. It is recommended to use [Docker Environment Setup](#docker-environment-setup) to avoid environment configuration issues.
-If you are not familiar with Docker, you can refer to [Local Environment Setup](#local-environment-setup) to install the environment by yourself.
+This will launch a full GitHub Codespaces environment in your browser with **no setup required**.
 
-### Docker Environment Setup
-- Requirements: `Docker`, `VSCode`
-1. Install `Docker Desktop` ( https://www.docker.com/products/docker-desktop ), and restart your computer after installation.
-2. Install `VSCode` and add the extensions `Remote Explorer`, `Dev Containers`, `Docker (optional)`.
+1. Click the green **`Code`** button at the top right of the page > switch to the **`Codespaces`** tab.
+2. Click **`Create codespace on branch-name`**.
+3. Wait for the browser to load the environment (approx. 10-15 minutes for the first time).
+4. **Done!**
 
-#### Create Docker Container
-Open `VSCode` in the root directory of the thesis template, and enter the following command in the terminal to create a Docker Container :
+> [!TIP]\
+> Open the `main.tex` file and press `Ctrl+S` to trigger compilation automatically.\
+> Or click the "TeX" icon on the left > `Build LaTeX project`.\
+> \
+> Once compiled, the PDF file will automatically appear in the file explorer on the right.\
+> Press `ctrl+alt+j` within a `*.tex` file to jump to the corresponding location in the PDF.
+
+> [!NOTE]\
+> You can now skip `⚙️ Local Installation`. Proceed to the [User Guide](#-user-guide) to start writing your thesis.
+
+> [!WARNING]\
+> Free accounts have a monthly GitHub Codespaces usage quota of approximately 120 hours.\
+> Please refer to the [Official GitHub Documentation](https://docs.github.com/en/billing/concepts/product-billing/github-codespaces) for actual usage limits and more information.
+
+## 🐳 Local DevContainer
+
+**Suitable for:** Users who require **long-term offline writing** or want to work offline on their own computer and are accustomed to local VS Code.
+
+#### Docker Environment Setup
+
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop); restart your computer after installation.
+2. Install VS Code along with the `Remote Explorer`, `Dev Containers`, and `Docker (optional)` extensions.
+
+#### Launch Steps
+
+1. `git clone` your thesis repository.
+2. Open the repository folder with VS Code.
+3. Click the **"Reopen in Container"** prompt in the bottom right corner (or press `F1` and search for `Dev Containers: Reopen in Container`).
+4. Wait for the container to start; the environment will be configured automatically (approx. 10-15 minutes for the first time).
+5. **Done!**
+
+<details>
+<summary><strong>If the above steps do not work, manually create the Docker Container (Click to expand)</strong></summary>
+
+Open VS Code in the root directory of the thesis template, and enter the following command in the terminal to create a Docker Container :
 
 ```bash
 # --name thesis : Specify the container name as thesis (can be changed by yourself)
 docker run -itd --name thesis -v .:/home/thesis anlit/thesistex:latest
 ```
 
-Next, in the `Remote Explorer` extension, you will see the newly created container as shown in the following image.  
+Next, in the `Remote Explorer` extension, you will see the newly created container as shown in the following image.
 Right-click on the `thesis` folder and select `Open in Container in Current Window` to enter the container environment.
 
 <div style="text-align: center;">
-    <img src="./figures/RemoteExplorer.png" alt="Remote Explorer"> <br>
+    <img src="https://github.com/anlit75/CCU-Thesis-LaTeX-Template/blob/assets/figures/RemoteExplorer.png?raw=true" alt="Remote Explorer"> <br>
     Remote Explorer - Dev Container <br><br>
-    <img src="./figures/attach.png" alt="Open in Container in Current Window"> <br>
+    <img src="https://github.com/anlit75/CCU-Thesis-LaTeX-Template/blob/assets/figures/attach.png?raw=true" alt="Open in Container in Current Window"> <br>
     Open in Container in Current Window <br><br>
 </div>
 
-Next, you can then use the template according to the [User Guide](#user-guide).
+</details>
 
-### Local Environment Setup
-- Requirements: `MiKTex`, `perl`, `VSCode (option)`
-1. Install `MiKTeX` and set it as the default compiler ( https://miktex.org/download ).
-2. Install `perl` ( https://strawberryperl.com/ ).
-3. Install `VSCode` and add the extensions `LaTeX Workshop` and `LaTeX Utilities`.
+> [!NOTE]\
+> Proceed to the [User Guide](#-user-guide) to start writing your thesis.
 
-> After the installation is complete, VSCode must be restarted!
+## ☁️ Auto Build & Backup
+The system automatically compiles your thesis in the cloud whenever you **push** changes to GitHub, providing an **additional PDF backup**.
 
-#### LaTeX Workshop Settings
-In the `settings.json` file, you can rearrange the order of the recipes, and the one at the top will be the default compiler.  
-Move the group `latexmk (xelatex)` to the top, as shown below:
+1. Click the **`Actions`** tab at the top of the repository.
+2. Click the latest workflow run (usually displayed as the commit message).
+3. Scroll down to the **`Artifacts`** section and click `PDF` to download.
 
-```json
-"latex-workshop.latex.recipes": [
-    {
-        "name": "latexmk (xelatex)",
-        "tools": [
-            "xelatexmk"
-        ]
-    },
-    {
-        "name": "latexmk",
-        "tools": [
-            "latexmk"
-        ]
-    },
-    {
-        "name": "latexmk (latexmkrc)",
-        "tools": [
-            "latexmk_rconly"
-        ]
-    },
-    {
-        "name": "latexmk (lualatex)",
-        "tools": [
-            "lualatexmk"
-        ]
-    },
-    ...
-],
+> [!NOTE]\
+> **Retention Period**: The cloud-generated PDF files are only retained for **5 days**.
 
-// Optional parameters
-"latex-workshop.latex.autoBuild.run": "onSave",         // automatically compile when saving
-"latex-workshop.latex.autoClean.run": "onSucceeded",    // automatically clean up when compilation is successful
+## 📂 Template Structure
+
+```
+Template Structure
+├── main.tex                            // Main document
+├── main.pdf                            // [Automatically generated] Compiled PDF of the main document
+├── frontpages
+│   ├── abstract.tex                    // Chinese/English Abstract
+│   ├── acknowledgement.tex             // Acknowledgement
+│   ├── denotation.tex                  // List of Symbols
+│   └── verification.pdf                // Thesis Validation Form (PDF)
+├── sections
+│   ├── introduction.tex                // Introduction
+│   ├── related_work.tex                // Related Work
+│   ├── method.tex                      // Methodology
+│   ├── experiments.tex                 // Results/Experiments
+│   └── conclusion.tex                  // Conclusion
+├── backpages
+│   ├── appendix.tex                    // Appendix
+│   └── reference.bib                   // Bibliography database
+├── figures
+│   ├── watermark.jpg                   // Watermark
+│   └── ...
+├── ccusetup.tex                        // Template configurations
+└── ccuthesis.cls                       // Template class file
+
 ```
 
-#### LaTeX Workshop SyncTex
-In the Keyboard Shortcuts Settings, you can configure the shortcut for `SyncTex` as shown in the image below.  
-The default is `ctrl+alt+j`, but you can adjust as needed.
+> [!NOTE]\
+> Please write content in the corresponding `.tex` files.\
+> To add or remove chapters, create/remove `.tex` files in the `sections` folder and use the `\input{./path/to/texfile}` syntax in `main.tex` to include or exclude them.
 
-![SyncTex](./figures/synctex.png)
+## 📖 User Guide
 
-- Press `ctrl+Left-Click` on the text in the PDF file to automatically jump to the corresponding location in the .tex file.
-- In the `.tex` file, use `ctrl+alt+j` to automatically jump to the corresponding location in the PDF file.
-
-The actual operation results are demonstrated as follows :
-
-![SyncTex](./figures/sync_demo.gif)
-
-#### LaTeX Utilities Settings
-This extension can automatically generate formatted tables and figures when **pasting** into vscode.  
-Please paste the following settings in the `settings.json` file :
-
-```json
-// The template is automatically applied when `ctrl+v` is used. If it is false, you need to use `ctrl+shift+v`
-"latex-utilities.formattedPaste.useAsDefault": false,
-
-// figure template
-"latex-utilities.formattedPaste.image.template": [
-    "\\begin{figure}[!htb]",
-    "\t\\centering",
-    "\t\\includegraphics[width=\\textwidth]{${imageFilePath}}",
-    "\t\\caption{${imageFileNameWithoutExt}}",
-    "\t\\label{fig:${imageFileNameWithoutExt}}",
-    "\\end{figure}",
-    ""
-],
-```
-
-The actual operation results are demonstrated as follows :
-
-![formattedPaste](./figures/paste_demo.gif)
-
-For further settings please refer to [LaTeX Utilities Wiki](https://github.com/tecosaur/LaTeX-Utilities/wiki).
-
-## User Guide
-For detailed instructions on using the template, please refer to the [Wiki Page](https://github.com/anlit75/CCU-Thesis-LaTeX-Template/wiki).  
+For detailed instructions on using the template, please refer to the [Wiki Page](https://github.com/anlit75/CCU-Thesis-LaTeX-Template/wiki).
 Please read in the following order and make configuration adjustments accordingly :
+
 1. [Editing Thesis Configurations](https://github.com/anlit75/CCU-Thesis-LaTeX-Template/wiki/Thesis-Configurations-English)
 2. [User Guide](https://github.com/anlit75/CCU-Thesis-LaTeX-Template/wiki/User-Guide-English)
 3. [LaTeX Basic Syntax](https://github.com/anlit75/CCU-Thesis-LaTeX-Template/wiki/LaTeX-Basic-Syntax-English)
 
-## Acknowledgement
-Huge thanks to the following template authors for their contributions.  
+## 🎨 Template Demonstration
+The sample PDF file for the template can be downloaded from [Releases](https://github.com/anlit75/CCU-Thesis-LaTeX-Template/releases).
+
+## 🤝 Acknowledgement
+
+Huge thanks to the following template authors for their contributions.
 Their work has provided valuable references and has contributed to the successful completion of this template :
 - [Hsins/NTU-Thesis-LaTeX-Template](https://github.com/Hsins/NTU-Thesis-LaTeX-Template)
 - [hasanabs/nsysu-thesis-latex-template](https://github.com/hasanabs/nsysu-thesis-latex-template)
 - [joeyuping/ccu-thesis-latextemplate](https://github.com/joeyuping/ccu-thesis-latextemplate)
 
-## Collaborators
-Special thanks to [joeyuping](https://github.com/joeyuping) for his contributions, which have greatly enhanced the completeness of this template!
+> [!IMPORTANT]\
+> Special thanks to [joeyuping](https://github.com/joeyuping) for his contributions, which have greatly enhanced the completeness of this template!
 
-## Disclaimer
+## ⚠️ Disclaimer
+
 This template is an unofficial version, and the format may contain errors. It is provided for reference only, and users should use it at their own risk.
 
-It is recommended that users make adjustments according to the requirements of their department. 
+It is recommended that users make adjustments according to the requirements of their department.
 If there are any problem, please feel free to create the issues or send an email to the [author's email](mailto:anson40512@gmail.com).
 
-## License
-MIT License
+## 📄 License
 
-CopyRight (c) 2024 Ting-An Cheng
+[MIT License](LICENSE)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy  
-of this software and associated documentation files (the "Software"), to deal  
-in the Software without restriction, including without limitation the rights  
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
-copies of the Software, and to permit persons to whom the Software is  
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all  
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
-SOFTWARE.
+Copyright (c) 2024 Ting-An Cheng
