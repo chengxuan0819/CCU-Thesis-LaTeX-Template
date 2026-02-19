@@ -78,27 +78,6 @@
 4.  等待容器啟動，環境即自動配置完成（首次約需 10-15 分鐘）。
 5. **完成!**
 
-<details>
-<summary><strong>如果上述步驟無法使用，請手動建立 Docker Container (點擊展開)</strong></summary>
-
-於論文根目錄下開啟 VS Code，並在終端機中輸入以下指令，即可建立 Docker Container :
-
-```bash
-# --name thesis : 指定 container 名稱為 thesis (可自行更改)
-docker run -itd --name thesis -v .:/home/thesis anlit/thesistex:latest
-```
-
-接著在 `Remote Explorer` 擴充程式中會看到剛建立的 container，如下圖所示，接著在 `thesis` 資料夾處右鍵，選擇 `Open in Container in Current Window` 即可進入 container 環境中。
-
-<div style="text-align: center;">
-    <img src="https://github.com/anlit75/CCU-Thesis-LaTeX-Template/blob/assets/figures/RemoteExplorer.png?raw=true" alt="Remote Explorer"> <br>
-    Remote Explorer - Dev Container <br><br>
-    <img src="https://github.com/anlit75/CCU-Thesis-LaTeX-Template/blob/assets/figures/attach.png?raw=true" alt="Open in Container in Current Window"> <br>
-    Open in Container in Current Window <br><br>
-</div>
-
-</details>
-
 > [!NOTE]\
 > 接下來請根據 [模板使用說明](#-模板使用說明--user-guide) 開始撰寫論文。
 
@@ -166,6 +145,4 @@ Template Structure
 建議使用者根據系上的要求進行調整，若有任何問題，請提 Issues 或是寄信至 [作者信箱](mailto:anson40512@gmail.com)。
 
 ## 📄 License
-[MIT License](LICENSE)
-
-Copyright (c) 2024 Ting-An Cheng
+本模板採用 MIT 授權，有關詳細信息請參閱 [LICENSE](LICENSE)。

@@ -78,28 +78,6 @@ This will launch a full GitHub Codespaces environment in your browser with **no 
 4. Wait for the container to start; the environment will be configured automatically (approx. 10-15 minutes for the first time).
 5. **Done!**
 
-<details>
-<summary><strong>If the above steps do not work, manually create the Docker Container (Click to expand)</strong></summary>
-
-Open VS Code in the root directory of the thesis template, and enter the following command in the terminal to create a Docker Container :
-
-```bash
-# --name thesis : Specify the container name as thesis (can be changed by yourself)
-docker run -itd --name thesis -v .:/home/thesis anlit/thesistex:latest
-```
-
-Next, in the `Remote Explorer` extension, you will see the newly created container as shown in the following image.
-Right-click on the `thesis` folder and select `Open in Container in Current Window` to enter the container environment.
-
-<div style="text-align: center;">
-    <img src="https://github.com/anlit75/CCU-Thesis-LaTeX-Template/blob/assets/figures/RemoteExplorer.png?raw=true" alt="Remote Explorer"> <br>
-    Remote Explorer - Dev Container <br><br>
-    <img src="https://github.com/anlit75/CCU-Thesis-LaTeX-Template/blob/assets/figures/attach.png?raw=true" alt="Open in Container in Current Window"> <br>
-    Open in Container in Current Window <br><br>
-</div>
-
-</details>
-
 > [!NOTE]\
 > Proceed to the [User Guide](#-user-guide) to start writing your thesis.
 
@@ -176,7 +154,4 @@ It is recommended that users make adjustments according to the requirements of t
 If there are any problem, please feel free to create the issues or send an email to the [author's email](mailto:anson40512@gmail.com).
 
 ## 📄 License
-
-[MIT License](LICENSE)
-
-Copyright (c) 2024 Ting-An Cheng
+This project is licensed under the MIT License, see the [LICENSE](LICENSE) file for details.
