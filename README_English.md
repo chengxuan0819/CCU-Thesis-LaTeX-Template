@@ -1,9 +1,9 @@
 # National Chung Cheng University (CCU) Thesis LaTeX Template
 
-[![License](https://img.shields.io/github/license/anlit75/ccu-thesis-latex-template)](LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/anlit75/ccu-thesis-latex-template)](https://github.com/anlit75/ccu-thesis-latex-template/releases)
 [![Build Status](https://github.com/anlit75/ccu-thesis-latex-template/actions/workflows/build.yml/badge.svg)](https://github.com/anlit75/ccu-thesis-latex-template/actions)
-<!-- [![Open in Overleaf](https://img.shields.io/badge/Overleaf-Open%20in%20Overleaf-47ba40?style=flat&logo=overleaf)](https://www.overleaf.com/docs?snip_uri=https://github.com/anlit75/ccu-thesis-latex-template/archive/refs/heads/main.zip) -->
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/anlit75/CCU-Thesis-LaTeX-Template)
+[![GitHub release](https://img.shields.io/github/v/release/anlit75/ccu-thesis-latex-template)](https://github.com/anlit75/ccu-thesis-latex-template/releases)
+[![License](https://img.shields.io/github/license/anlit75/ccu-thesis-latex-template)](LICENSE)
 
 An out-of-the-box CCU Thesis LaTeX Template integrated with Docker and GitHub Codespaces, offering a zero-config writing environment with strict formatting compliance and automated PDF backups.
 
@@ -38,7 +38,7 @@ Click the green **`[Use this template]`** button above and select **Private** to
 
 ## 🚀 Quick Start
 
-**Suitable for:** Users who do not want to install any software, have limited computer performance, or simply want a quick preview.
+**Suitable for:** Users who do not want to install any software, have limited computer performance, or want a quick start.
 
 This will launch a full GitHub Codespaces environment in your browser with **no setup required**.
 

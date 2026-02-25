@@ -1,9 +1,9 @@
 # 國立中正大學碩博士論文LaTeX模板
 
-[![License](https://img.shields.io/github/license/anlit75/ccu-thesis-latex-template)](LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/anlit75/ccu-thesis-latex-template)](https://github.com/anlit75/ccu-thesis-latex-template/releases)
 [![Build Status](https://github.com/anlit75/ccu-thesis-latex-template/actions/workflows/build.yml/badge.svg)](https://github.com/anlit75/ccu-thesis-latex-template/actions)
-<!-- [![Open in Overleaf](https://img.shields.io/badge/Overleaf-Open%20in%20Overleaf-47ba40?style=flat&logo=overleaf)](https://www.overleaf.com/docs?snip_uri=https://github.com/anlit75/ccu-thesis-latex-template/archive/refs/heads/main.zip) -->
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/anlit75/CCU-Thesis-LaTeX-Template)
+[![GitHub release](https://img.shields.io/github/v/release/anlit75/ccu-thesis-latex-template)](https://github.com/anlit75/ccu-thesis-latex-template/releases)
+[![License](https://img.shields.io/github/license/anlit75/ccu-thesis-latex-template)](LICENSE)
 
 整合 Docker 與 GitHub Codespaces 的國立中正大學學位論文 LaTeX 模板，提供開箱即用的「零配置」寫作環境，確保排版合規並自動備份 PDF。
 
@@ -28,7 +28,7 @@
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/anlit75/ccu-thesis-latex-template)
 
 > [!CAUTION]\
-> *此模式無法直接儲存進度，請勿用於正式寫作。*
+> *此模式無法儲存進度，請勿用於正式寫作。*
 
 ## ⚡ 獲取本模板 | Get The Template
 
@@ -40,7 +40,7 @@
 
 ## 🚀 快速開始 | Quick Start
 
-**適合：** 不想安裝任何軟體、電腦效能有限、或只是想快速預覽的使用者。
+**適合：** 不想安裝任何軟體、電腦效能有限、或想快速開始的使用者。
 
 這將在您的瀏覽器中啟動一個完整的 GitHub Codespaces 環境，**無需任何設定**。
 
