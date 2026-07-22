@@ -37,5 +37,32 @@
         "\\end{figure}",
         ""
     ],
-    "files.autoSave": "onFocusChange"
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/01introduction.aux": true,
+        "**/01introduction.log": true,
+        "**/01introduction.gz": true,
+        "**/01introduction.out": true,
+        "**/02related_work.aux": true,
+        "**/02related_work.log": true,
+        "**/02related_work.gz": true,
+        "**/02related_work.out": true,
+        "**/03method.aux": true,
+        "**/03method.log": true,
+        "**/03method.gz": true,
+        "**/03method.out": true,
+        "**/05conclusion.aux": true,
+        "**/05conclusion.log": true,
+        "**/05conclusion.gz": true,
+        "**/05conclusion.out": true,
+        "**/04experiments.aux": true,
+        "**/04experiments.log": true,
+        "**/04experiments.gz": true,
+        "**/04experiments.out": true
+    }
 }

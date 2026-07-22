@@ -1,25 +1,86 @@
 % !TeX root = ../main.tex
+%===========================================================================%
+%->> Appendix A
+%===========================================================================%
 
-\appendix{A}{附錄名稱}
+\appendix
+\chapter{系統級模擬完整參數設定 (System-Level Simulation Parameter Settings)}
+\label{appendix:A}
 
-% appendix body
+本附錄詳細列出本研究所採用之系統級模擬（SLS）設定參數。為了確保模擬環境之產業通用性、避免標準術語在翻譯上的歧義，並與 3GPP TR 38.864 網路節能（NES）技術報告中之 Annex B Set 1（Macro Scenario）基準規範達到完全一致的嚴謹對齊，本參數表之技術指標與配置內容皆以國際通訊標準英文術語進行完整表列。因技術參數項目繁多，特將表格區分為兩部分呈現：表 \ref{tab:appendix_3gpp_set1_part1} 主要涵蓋網路佈署拓撲與基站實體層配置 (Part I)，表 \ref{tab:appendix_3gpp_set1_part2} 則涵蓋終端參數、資源調度與隨機流量模型 (Part II)。
 
-\begin{figure}[h]
-  \centerline{\includegraphics[width=0.5\columnwidth]{gambar}}
-  \caption*{附錄圖片}
-  \label{figure:apxfig1}
-\end{figure}
+%--- 表格第一部分：網路佈署與基地台參數 ---
+\begin{table}[htbp]
+\centering
+\caption{Simulation Assumptions Aligned with 3GPP TR 38.864 Annex B Set 1 (Part I)}
+\label{tab:appendix_3gpp_set1_part1}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|p{0.38\textwidth}|X|}
+\hline
+\textbf{Parameter Category} & \textbf{Simulation Value / Configuration (Set 1)} \\ \hline
+\multicolumn{2}{|c|}{\textbf{Network Layout, Topology, and Mobility}} \\ \hline
+Channel model & 3D-UMa (Urban Macro), based on 3GPP TR 38.901 \\ \hline
+Inter-site distance (ISD) & 500 m \\ \hline
+Network topology & 7 sites, 3 sectors per site (21 cells total) \\ \hline
+Boundary handling & 3D Wrap-around layout \\ \hline
+Carrier frequency & 4.0 GHz \\ \hline
+System bandwidth & 100 MHz \\ \hline
+Subcarrier spacing (SCS) & 30 kHz (Numerology $\mu = 1$) \\ \hline
+Frame structure & TDD mode, 1 slot = 0.5 ms (14 OFDM symbols/slot) \\ \hline
+Building penetration loss & 100\% Low Loss Model \\ \hline
+UE spatial deployment & 80\% Indoor, 20\% Outdoor random distribution \\ \hline
+UE mobility & Speed = 3 km/h, random directions \\ \hline
+\multicolumn{2}{|c|}{\textbf{BS Antenna Array and Physical Layer Configuration}} \\ \hline
+Antenna configurations & 
+  Antenna array type: 64T64R AAS, cross-polarized \newline
+  For 64T: $(M, N, P, M_g, N_g, M_p, N_p) = (8, 8, 2, 1, 1, 4, 8)$ \newline
+  Antenna element spacing: $(d_H, d_V) = (0.5, 0.8)\lambda$ \newline
+  Tx port configuration $(M_t, N_t) = (4, 8)$ \\ \hline
+Antenna element radiation pattern & Directional macro pattern per TR 38.864 (max gain: 8 dBi) \\ \hline
+Maximum downlink Tx power & 49 dBm (with dynamic power boosting) \\ \hline
+BS antenna height & 25 m \\ \hline
+BS receiver noise figure & 5 dB \\ \hline
+\multicolumn{2}{|c|}{\textbf{User Equipment (UE) Parameters}} \\ \hline
+UE receiver configuration & 2T4R cross-polarized \\ \hline
+UE antenna configuration & 
+  For 4R: $(M, N, P, M_g, N_g; M_p, N_p) = (1, 2, 2, 1, 1; 1, 2)$ \newline
+  Antenna element spacing: $(d_H, d_V) = (0.5, N/A)\lambda$ \\ \hline
+UE antenna radiation pattern & Omnidirectional pattern (0 dBi element gain) \\ \hline
+UE height & 1.5 m \\ \hline
+UE maximum Tx power & 23 dBm \\ \hline
+UE noise figure & 9 dB \\ \hline
+\end{tabularx}
+\end{table}
 
-\begin{table}[h]
-    \centering
-    \caption*{附錄表格}
-    \label{table:apxtab1}
-    \begin{tabular}{p{\textwidth/2}p{\textwidth/2}}
-        \hline
-        \multicolumn{1}{c}{\textbf{硬體}} & \multicolumn{1}{c}{\textbf{軟體}} \\ \hline
-        Intel(R) Core(TM) i7-8700 CPU      & Ubuntu 18.04.3 LTS               \\
-        NVIDIA GeForce GTX 1080 Ti         & CUDA 10.1                        \\
-        DDR4 32GB                          & PyTorch 1.3.1                    \\
-        SSD 1TB                            &                                  \\ \hline
-    \end{tabular}
+\clearpage % 強制換頁
+
+%--- 表格第二部分：終端、傳輸與流量模型 ---
+\begin{table}[htbp]
+\centering
+\caption{Simulation Assumptions Aligned with 3GPP TR 38.864 Annex B Set 1 (Part II)}
+\label{tab:appendix_3gpp_set1_part2}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{|p{0.38\textwidth}|X|}
+\hline
+\textbf{Parameter Category} & \textbf{Simulation Value / Configuration (Set 1)} \\ \hline
+\multicolumn{2}{|c|}{\textbf{Transmission Control and CSI Management}} \\ \hline
+DL Transmission scheme & SU-MIMO spatial multiplexing (up to 4 layers adaptive selection) \\ \hline
+Maximum DL modulation order & Up to 256 QAM \\ \hline
+DL Channel estimation & Precoded CSI-RS based \\ \hline
+Codebook feedback mode & 3GPP Type I Single-Panel / Type II codebook \\ \hline
+Rank adaptation scheme & Fully dynamic rank adaptation (\texttt{uFixDLRank = 0}) \\ \hline
+CSI feedback periodicity & $T_{\text{CSI}} = 20$ ms \\ \hline
+CSI feedback latency & 3 slots \\ \hline
+UL Channel sounding & Non-precoded SRS (4 Tx ports) \\ \hline
+DL Receiver architecture & MMSE-IRC \\ \hline
+Resource scheduling algorithm & Proportional Fair (PF) scheduling \\ \hline
+\multicolumn{2}{|c|}{\textbf{Traffic Model, Upper Layers, and Power Baseline}} \\ \hline
+Traffic model & Bursty non-full buffer traffic (FTP Model 1 / Model 3) \\ \hline
+Packet payload size & Log-normal distribution / fixed interval \\ \hline
+Packet arrival process & Poisson arrival process \\ \hline
+HARQ scheme & Asynchronous incremental redundancy (max 3 retransmissions) \\ \hline
+Target block error rate (BLER) & 10\% for initial transmission \\ \hline
+BS power consumption baseline & 3GPP TR 38.864 Category 1 power model \\ \hline
+BS hardware switching latency & State transition latency ($T_{\text{transition}}$) \\ \hline
+\end{tabularx}
 \end{table}

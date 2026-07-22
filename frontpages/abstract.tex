@@ -2,7 +2,11 @@
 
 \begin{abstract}
 
-中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要中文摘要
+隨著 5G-Advanced 網路部署密度與大規模多輸入多輸出（Massive MIMO，如 64T64R）技術的指數級增長，基地台的高耗電問題已成為電信營運商降低營運成本與達成淨零碳排目標的首要挑戰。在 3GPP 研議的網路節能（Network Energy Saving, NES）技術中，空間域適應（Spatial Domain Adaptation, SDA）透過動態增減射頻鏈與天線數量來降低功耗，被視為極具潛力的解決方案。然而，傳統基於負載（Load-based）或靜態規則的天線調適策略，在面對實際網路中的突發性流量（Burst Traffic）時往往反應遲鈍，難以在「節能效益」與「封包延遲」的兩難中取得最佳平衡，容易導致嚴重的佇列堆積與服務品質（QoS）下降。
+
+為解決此研究缺口，本論文提出一套「流量感知的動態權重李雅普諾夫最佳化演算法」（Traffic-Aware Dynamic V-Control Lyapunov Optimization）。本研究跳脫傳統的貪婪啟發式規則，引入李雅普諾夫最佳化理論作為決策大腦，利用漂移加懲罰（Drift-Plus-Penalty）數學框架，將 MAC 層的佇列長度（延遲）與 PHY 層的基地台功耗進行跨時間尺度的聯合最佳化。此外，本演算法創新地提出了動態權重（Dynamic $V$）控制機制，能根據即時流量變化自動調整系統對「省電」的執著程度，並結合 MAC-PHY 跨層映射（Bits to RU），在不依賴未來先驗知識的條件下，提供具備數學防護網的即時天線收放決策。
+
+在系統驗證方面，本研究基於符合 3GPP TR 38.864 標準的高保真度系統級模擬器（SLS），於 7-site 3-sector（共 21 個細胞）的 Wrap-around 網路拓撲下進行嚴謹的效能評估。實驗結果證明，本論文提出之演算法能在不同負載（Low, Light, Medium Load）情境下，精準找到節能與延遲之間的最佳取捨與折衷平衡（Trade-off）。相較於傳統 SDA 基線技術，本設計不僅能大幅提升節能率（Energy Saving Gain, ESG），更能嚴格壓制封包延遲，同時保障使用者感知吞吐量（User-Perceived Throughput, UPT）之核心系統 KPI，成功突破效能壓榨之極限，為 5G-A 基地台天線節能提供了一套兼具理論嚴謹性與工程實用價值之解決方案。
 
 \end{abstract}
 
@@ -10,6 +14,10 @@
 
 \begin{abstract*}
 
-Abstract \lipsum[1]
+As 5G-Advanced networks become increasingly dense and incorporate large-scale Massive MIMO architectures (such as 64T64R), the escalating power demands of base stations (BSs) pose a critical hurdle. Overcoming this issue is essential for telecommunication providers striving to cut down operational expenditures (OPEX) and meet net-zero carbon emission goals. Within the 3GPP Network Energy Saving (NES) framework, Spatial Domain Adaptation (SDA) emerges as an exceptionally viable approach. It conserves energy by adaptively scaling the active radio frequency (RF) chains and antenna elements. Nevertheless, conventional SDA methods relying on heuristic load thresholds or static rules exhibit delayed responsiveness when encountering highly bursty traffic typical of practical networks. This sluggishness prevents systems from reaching an ideal equilibrium between power conservation and transmission latency, ultimately triggering massive queue backlogs and deteriorating the Quality of Service (QoS).
+
+To address these limitations, this thesis introduces a novel strategy: the Traffic-Aware Dynamic $V$-Control Lyapunov Optimization algorithm. Bypassing standard greedy heuristics, our approach adopts the Lyapunov optimization theory to serve as the core decision-making entity. By leveraging the Drift-Plus-Penalty formulation, the proposed framework enables a cross-layer joint optimization that simultaneously minimizes the physical (PHY) layer power consumption and the medium access control (MAC) layer queueing delay over continuous time slots. Additionally, we integrate an innovative adaptive weighting mechanism (Dynamic $V$) that autonomously shifts the operational priority toward energy conservation in response to instantaneous traffic variations. Coupled with a precise MAC-to-PHY resource mapping (translating Bits to Resource Units, RU), this methodology generates real-time, mathematically guaranteed antenna scaling decisions without requiring any a priori statistical knowledge of future traffic arrivals.
+
+To validate the system-level performance, comprehensive evaluations are executed on a high-fidelity System-Level Simulator (SLS) strictly aligned with the 3GPP TR 38.864 specifications. The simulations utilize a realistic 7-site, 3-sector wrap-around cellular topology comprising 21 cells. The numerical results verify that the designed algorithm accurately tracks the optimal trade-off boundary between power reduction and latency constraints under a variety of traffic intensities (including Low, Light, and Medium Loads). When evaluated against conventional SDA baselines, our proposed architecture not only achieves a substantially higher Energy Saving Gain (ESG) but also tightly bounds the packet queueing delay. Meanwhile, it fully secures the critical User-Perceived Throughput (UPT) key performance indicator (KPI). Ultimately, this research extends the theoretical limits of network efficiency, delivering a robust antenna adaptation solution for 5G-Advanced base stations that seamlessly bridges rigorous mathematical optimization with practical engineering deployability.
 
 \end{abstract*}
