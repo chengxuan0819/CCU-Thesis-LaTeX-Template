@@ -18,7 +18,7 @@
 \subsubsection{時域節能（Time Domain NES）}
     時域節能技術之運作，建立於微秒級不連續傳輸（Micro-Discontinuous Transmission, uDTX）與先進休眠模式（Advanced Sleep Mode, ASM）之技術基礎上。uDTX 機制賦予基地台在微秒（$\mu s$）時間尺度內快速切換收發狀態的能力，並藉由 ASM 進入低功耗狀態以削減閒置能耗。在此技術基石下，目前 3GPP 研議之時域節能策略主要包含：週期性訊號適應（Periodic Signal Adaptation）、SSB-less 載波聚合（SSB-less Carrier Aggregation, SSB-less CA）、以及細胞不連續傳輸與接收（Cell Discontinuous Transmission/Reception, Cell DTX/DRX）等機制。
 
-    透過動態調整同步訊號區塊（SSB）與系統資訊區塊 1（SIB1）之傳輸週期，或利用 Cell DTX/DRX 將用戶數據傳輸集中於特定時間窗，基地台得以創造更長之靜默期（Sleep Window），從而最大化 ASM 之啟用效益。如圖 \ref{fig:cell_dtx_drx} 所示，該機制透過對齊基地台的數據傳輸窗與用戶端的休眠週期，實現了跨層級的資源節能與同步排程。Nokia \cite{nokia_whitepaper} 指出，透過此類時域資源的精細化調控，基地台能在維持覆蓋率與服務品質的同時，顯著降低非活躍時段的基礎能耗。
+    透過動態調整同步訊號區塊（SSB）與系統資訊區塊 1（SIB1）之傳輸週期，或利用 Cell DTX/DRX 將用戶數據傳輸集中於特定時間窗，基地台得以創造更長之靜默期（Sleep Window），從而最大化 ASM 之啟用效益。如圖 \ref{fig:cell_dtx_drx} 所示，該機制透過對齊基地台的數據傳輸窗與用戶端的休眠週期，實現了跨層級的資源節能與同步排程。Nokia \cite{nokia2024_energy} 指出，透過此類時域資源的精細化調控，基地台能在維持覆蓋率與服務品質的同時，顯著降低非活躍時段的基礎能耗。
 
     \begin{figure}[htbp]
         \centering

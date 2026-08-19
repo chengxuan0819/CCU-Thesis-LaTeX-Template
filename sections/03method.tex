@@ -10,7 +10,7 @@
 \subsection{系統部署與網路場景 (Network Layout and Deployment)}
 為了驗證所提之「流量感知動態天線調適 (SDA) 決策引擎」在網路節能與傳輸延遲間的動態權衡績效，本研究建構了一套符合 3GPP 系統級模擬規範的大規模網路場景，藉以進行嚴謹之效能評估。
 \subsubsection{系統級模擬平台架構 (SLS Architecture)}
-本研究之實驗驗證基礎建構於一套既有之 5G 系統級模擬平台。該平台已整合網路拓撲模擬、頻道建模與 MAC 層排程框架。為達成空間域適應（SDA）之研究目標，本研究針對此平台進行關鍵模組擴充與底層邏輯重構，並整合李雅普諾夫最佳化決策機制。圖 \ref{fig:sls_arch} 展示了本研究之整合架構，其中灰色區塊代表既有之標準模擬環境，綠色區塊則為本研究所開發之核心演算法模組。
+本研究之實驗驗證基礎，係建構於由工業技術研究院（ITRI）所開發之既有 5G Wireless System Evaluation (WiSE) 系統級模擬平台 \cite{jao_wise_5g}。該平台已高度整合網路拓撲模擬、三維空間通道建模與 MAC 層排程框架。為達成空間域適應（SDA）之研究目標，本研究針對此既有平台進行關鍵模組擴充與底層邏輯重構，並整合李雅普諾夫最佳化決策機制。
 
 本研究在該模擬平台上的實作範疇與技術貢獻說明如下：
 
@@ -44,9 +44,9 @@
 
 在使用者分佈與鏈路特性方面，本研究限定於下行鏈路（Downlink, DL）傳輸場景，並將 UE 設備於模擬區域內進行全域隨機分佈（Global Random Drop）。相較於於各細胞內強制固定使用者數量，此佈署模式更符合真實網路中用戶移動與分佈的隨機性，進而產生細胞間（Inter-cell）顯著的負載差異（Spatial Load Variation）。這種統計意義上的負載波動，對於驗證 SDA 機制在面對動態流量環境下之效能至關重要。同時，此佈署結合了符合 3GPP TR 38.901 規範之都會宏細胞（Urban Macro, UMa）真實通道模型 \cite{3gpp_tr38901}，模擬真實無線環境中之多徑衰落與干擾效應。透過此模擬框架，本研究旨在構建一個貼近實務佈署之測試平台，從而嚴謹地檢驗本研究所提之流量感知演算法在複雜網路場景下，如何兼顧節能增益與邊緣用戶服務品質之穩健性。
 
-系統底層之硬體功耗係數對齊 3GPP TR 38.864 標準中所定義之 Category 1 Set 1 功耗模型基準 \cite{3gpp2023_tr38864}。在基地台天線架構方面，本研究採用基於 3GPP TS 38.802 標準之 64T64R Massive MIMO 陣列模型 \cite{3gpp_ts38802}，支援靈活之天線埠重組與空間域動態調適。基地台之下行最大傳輸功率設定為 49 dBm，載波頻率配置於 4.0 GHz，並採用 30 kHz 之子載波間隔（SCS）。在無線通道傳播模型上，本研究採用符合 3GPP TR 38.901 規範之都會宏細胞（Urban Macro, UMa）場景設定 \cite{3gpp_tr38901}。
+系統底層之硬體功耗係數對齊 3GPP TR 38.864 標準中所定義之 Category 1 Set 1 功耗模型基準 \cite{3gpp2023_tr38864}。在基地台天線架構方面，本研究採用基於 3GPP TR 38.802 標準之 64T64R Massive MIMO 陣列模型 \cite{3gpp_tr38802}，支援靈活之天線埠重組與空間域動態調適。基地台之下行最大傳輸功率設定為 49 dBm，載波頻率配置於 4.0 GHz，並採用 30 kHz 之子載波間隔（SCS）。在無線通道傳播模型上，本研究採用符合 3GPP TR 38.901 規範之都會宏細胞（Urban Macro, UMa）場景設定 \cite{3gpp_tr38901}。
 
-流量模型採用 FTP Model 3，其讀取間隔為 500 ms，封包大小固定為 0.5 MB。在負載測試部分，設定低負載（$N_{UE/cell}=3$）與輕負載（$N_{UE/cell}=6$）兩種場景，UE 採用全域隨機分佈（Global Random Drop）以維持統計代表性。詳細之系統參數配置摘要如表 \ref{tab:sim_para} 所示：
+流量模型採用 FTP Model 3，其讀取間隔為 200 ms，封包大小固定為 0.5 MB。在負載測試部分，設定低負載（$N_{UE/cell}=3$）與輕負載（$N_{UE/cell}=6$）兩種場景，UE 採用全域隨機分佈（Global Random Drop）以維持統計代表性。詳細之系統參數配置摘要如表 \ref{tab:sim_para} 所示：
 
 \begin{table}[htbp]
 \centering
@@ -59,7 +59,7 @@
 Network Topology & 7-cell Ring (21 cells total) \\ \hline
 Carrier Frequency & 4.0 GHz \\ \hline
 Max DL Tx Power & 49 dBm \\ \hline
-Antenna Array Config. & 64T64R Massive MIMO \cite{3gpp_ts38802} \\ \hline
+Antenna Array Config. & 64T64R Massive MIMO \cite{3gpp_tr38802} \\ \hline
 Subcarrier Spacing (SCS) & 30 kHz \\ \hline
 Power Model & 3GPP TR 38.864 Cat 1 Set 1 \cite{3gpp2023_tr38864} \\ \hline
 Channel Model & Urban Macro (UMa) \cite{3gpp_tr38901} \\ \hline
